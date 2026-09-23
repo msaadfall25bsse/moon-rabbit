@@ -1,26 +1,83 @@
-@import "tailwindcss";
-
+/* Master Normal CSS for Moon Rabbit (https://moonrabbit.pk/) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-black: #000000;
+  --bg-dark: #050505;
+  --bg-card: #0d0d0d;
+  --text-white: #ffffff;
+  --text-offwhite: #e9e9e9;
+  --text-gray: #a0a0a0;
+  --accent-gold: #d4af37;
+  --accent-gold-bright: #ffc107;
+  --overlay-dark: rgba(0, 0, 0, 0.88);
+  --font-oswald: var(--font-oswald), "Oswald", sans-serif;
+  --font-roboto: var(--font-roboto), "Roboto", sans-serif;
+  --max-width: 1140px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  line-height: 1.6;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-oswald);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--text-white);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* Global Container Utility */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Common Page Section Spacing */
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 50px 0;
+  }
 }

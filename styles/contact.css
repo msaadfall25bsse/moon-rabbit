@@ -1,0 +1,166 @@
+/* Contact Page Styles matching moonrabbit.pk */
+
+.contact-hero {
+  background-color: var(--bg-black);
+  padding: 60px 0 40px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-title {
+  font-family: var(--font-oswald);
+  font-size: 45px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.contact-subtitle {
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-section {
+  padding: 80px 0;
+  background-color: var(--bg-black);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* Contact Information Sidebar */
+.contact-info-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 36px 30px;
+}
+
+.info-heading {
+  font-family: var(--font-oswald);
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.info-item {
+  margin-bottom: 24px;
+}
+
+.info-label {
+  font-family: var(--font-oswald);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.info-value {
+  font-family: var(--font-roboto);
+  font-size: 15px;
+  color: var(--text-offwhite);
+  line-height: 1.6;
+}
+
+/* Contact Form Component */
+.contact-form-wrapper {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 36px 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-oswald);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-offwhite);
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: var(--font-roboto);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: transparent;
+  color: var(--accent-gold);
+  font-family: var(--font-oswald);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-gold);
+  border-radius: 2px;
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-gold);
+  color: #000000;
+}
+
+.success-msg {
+  font-family: var(--font-roboto);
+  font-size: 14px;
+  color: var(--accent-gold);
+  background-color: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--accent-gold);
+  padding: 12px;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

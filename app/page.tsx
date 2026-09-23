@@ -1,69 +1,74 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import MountainCard from "@/components/MountainCard";
+import { MOUNTAINS_DATA } from "@/data/mountains";
+import "@/styles/home.css";
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main>
+      {/* 1. Main Hero Section */}
+      <section className="hero-section">
+        <img
+          src="/images/home-hero.jpg"
+          alt="Northern Pakistan Scenery"
+          className="hero-background"
+          onError={(e) => {
+            // Hide image element if file not yet present in public/
+            e.currentTarget.style.display = "none";
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="hero-overlay" />
+        <div className="hero-content">
+          <h1 className="hero-title">Moon Rabbit</h1>
+          <p className="hero-subtitle">
+            Mystical Guided Tours & Mineral Exploration in Northern Pakistan
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 2. What We Do Section */}
+      <section className="what-we-do-section">
+        <div className="container">
+          <h2 className="section-header-title">What We Do</h2>
+          <div className="what-we-do-content">
+            <p className="what-we-do-text">
+              Moon Rabbit offers a unique Mystical Guided Tour through the
+              bewildering scenery of Northern Pakistan. Our tour packages are
+              all inclusive and only require a simple booking followed by your
+              arrival to a local airport of your choice.
+            </p>
+            <p className="what-we-do-text">
+              Rest assured, from arrival till your departure Moon Rabbit will
+              lavish you with hospitality while providing the following
+              amenities: dependable 4×4 vehicles, boats, mountain bikes, and a
+              variety of picturesque accommodations along with authentic cuisine
+              from all of the best restaurants in the area.
+            </p>
+            <p className="what-we-do-text">
+              The Moon Rabbit Tour Guide is well-versed and during the journey he
+              will provide all guests an interesting backstory regarding the
+              people, culture, and history of the area focusing on esoteric
+              knowledge transfer. We look forward to sharing a truly memorable
+              life changing experience with you!
+            </p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* 3. The Majestic Mountains of Pakistan Section */}
+      <section className="mountains-section">
+        <div className="container">
+          <h2 className="mountains-section-title">
+            The Majestic Mountains of Pakistan
+          </h2>
+          <div className="mountains-grid">
+            {MOUNTAINS_DATA.map((mountain) => (
+              <MountainCard key={mountain.id} mountain={mountain} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

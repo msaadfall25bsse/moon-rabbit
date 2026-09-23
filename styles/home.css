@@ -1,0 +1,225 @@
+/* Home Page Styles matching moonrabbit.pk */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 550px;
+  background-color: var(--bg-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-family: var(--font-oswald);
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-roboto);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-offwhite);
+  letter-spacing: 1px;
+}
+
+/* What We Do Section */
+.what-we-do-section {
+  background-color: var(--bg-black);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
+  padding: 90px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-header-title {
+  font-family: var(--font-oswald);
+  font-size: 45px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.what-we-do-content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.what-we-do-text {
+  font-family: var(--font-oswald);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #fffdfd;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+/* Majestic Mountains Section */
+.mountains-section {
+  background-color: var(--bg-black);
+  padding: 90px 0;
+}
+
+.mountains-section-title {
+  font-family: var(--font-oswald);
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+  color: #e9e9e9;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.mountains-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Mountain Card */
+.mountain-card {
+  position: relative;
+  min-height: 350px;
+  background-color: #111111;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.mountain-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.mountain-card:hover::before {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.mountain-card-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mountain-card-title {
+  font-family: var(--font-oswald);
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.mountain-card-desc {
+  font-family: var(--font-oswald);
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.mountain-card-stats {
+  font-family: var(--font-oswald);
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-top: 6px;
+}
+
+.mountain-card-range {
+  font-family: var(--font-oswald);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--accent-gold);
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .mountains-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-title {
+    font-size: 38px;
+  }
+  .section-header-title,
+  .mountains-section-title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mountains-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+  }
+  .what-we-do-text {
+    font-size: 16px;
+    text-align: left;
+  }
+}

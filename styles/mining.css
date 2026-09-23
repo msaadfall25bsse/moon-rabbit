@@ -1,0 +1,280 @@
+/* Mining Page Styles matching moonrabbit.pk */
+
+.mining-hero {
+  background-color: var(--bg-black);
+  padding: 70px 0 40px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.mining-badge {
+  display: inline-block;
+  font-family: var(--font-oswald);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 4px 16px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.mining-title {
+  font-family: var(--font-oswald);
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.mining-subtitle {
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Mining Internal Navigation Bar */
+.mining-nav-bar {
+  background-color: #080808;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.mining-nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 16px 20px;
+}
+
+.mining-nav-link {
+  font-family: var(--font-oswald);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.mining-nav-link:hover {
+  color: var(--accent-gold);
+}
+
+/* Mining Sub-Sections */
+.mining-sub-section {
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sub-section-title {
+  font-family: var(--font-oswald);
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+/* Grid Layouts */
+.maps-grid,
+.equipment-grid,
+.team-grid,
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.equipment-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Map & Equipment Cards */
+.mining-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mining-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #111111;
+}
+
+.mining-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mining-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mining-card-tag {
+  font-family: var(--font-oswald);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.mining-card-title {
+  font-family: var(--font-oswald);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.mining-card-desc {
+  font-family: var(--font-roboto);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-offwhite);
+}
+
+/* Methodology Steps */
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.methodology-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 30px 24px;
+  position: relative;
+}
+
+.step-number {
+  font-family: var(--font-oswald);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-family: var(--font-oswald);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-white);
+  margin-bottom: 12px;
+}
+
+.step-desc {
+  font-family: var(--font-roboto);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-offwhite);
+}
+
+/* Investment Cards */
+.investment-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inv-level {
+  font-family: var(--font-oswald);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.inv-title {
+  font-family: var(--font-oswald);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-white);
+  margin-bottom: 14px;
+}
+
+.inv-desc {
+  font-family: var(--font-roboto);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-offwhite);
+  margin-bottom: 24px;
+}
+
+.inv-features {
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
+
+.inv-features li {
+  font-family: var(--font-roboto);
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inv-features li::before {
+  content: "✓";
+  color: var(--accent-gold);
+}
+
+@media (max-width: 1024px) {
+  .equipment-grid,
+  .methodology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .maps-grid,
+  .team-grid,
+  .investment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .maps-grid,
+  .equipment-grid,
+  .team-grid,
+  .methodology-grid,
+  .investment-grid {
+    grid-template-columns: 1fr;
+  }
+  .mining-title {
+    font-size: 34px;
+  }
+}

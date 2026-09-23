@@ -1,0 +1,127 @@
+/* Vehicles Page Styles matching moonrabbit.pk */
+
+.vehicles-hero {
+  background-color: var(--bg-black);
+  padding: 60px 0 40px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vehicles-title {
+  font-family: var(--font-oswald);
+  font-size: 45px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vehicles-subtitle {
+  font-family: var(--font-roboto);
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vehicles-section {
+  padding: 80px 0;
+  background-color: var(--bg-black);
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Vehicle Card Component */
+.vehicle-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.vehicle-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #111111;
+  overflow: hidden;
+}
+
+.vehicle-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vehicle-card:hover .vehicle-card-img {
+  transform: scale(1.05);
+}
+
+.vehicle-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vehicle-card-category {
+  font-family: var(--font-oswald);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.vehicle-card-name {
+  font-family: var(--font-oswald);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-white);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.vehicle-card-capacity {
+  font-family: var(--font-roboto);
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 12px;
+}
+
+.vehicle-card-desc {
+  font-family: var(--font-roboto);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-offwhite);
+}
+
+@media (max-width: 1024px) {
+  .vehicles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .vehicles-grid {
+    grid-template-columns: 1fr;
+  }
+  .vehicles-title {
+    font-size: 32px;
+  }
+}
