@@ -1,280 +1,442 @@
-/* Mining Page Styles matching moonrabbit.pk */
+/* =========================================================
+   Mining Page Styles (https://moonrabbit.pk/mining/)
+   Faithfully reproduced using exact CSS rules from moonrabbit.pk
+   ========================================================= */
 
-.mining-hero {
-  background-color: var(--bg-black);
-  padding: 70px 0 40px 0;
-  text-align: center;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+.mining-page {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 70px;
 }
 
-.mining-badge {
-  display: inline-block;
-  font-family: var(--font-oswald);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
-  padding: 4px 16px;
-  border-radius: 2px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+/* 1. Hero Quote Banner */
+.mining-hero-quote-section {
+  padding: 30px 0 10px 0;
+  display: flex;
+  justify-content: center;
 }
 
-.mining-title {
-  font-family: var(--font-oswald);
-  font-size: 48px;
-  font-weight: 200;
-  letter-spacing: 3px;
-  color: var(--text-white);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.mining-subtitle {
-  font-family: var(--font-roboto);
-  font-size: 16px;
-  color: var(--text-gray);
-  max-width: 750px;
+.mining-quote-banner-wrapper {
+  max-width: 650px;
+  width: 100%;
   margin: 0 auto;
 }
 
-/* Mining Internal Navigation Bar */
+.mining-quote-banner {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 2. Internal Sticky Sub-Navigation */
 .mining-nav-bar {
-  background-color: #080808;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
-  top: 0;
-  z-index: 100;
+  top: 70px;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 0;
+  margin-bottom: 40px;
 }
 
 .mining-nav-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 16px 20px;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .mining-nav-link {
-  font-family: var(--font-oswald);
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 1.5px;
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #d4af37;
   text-transform: uppercase;
-  color: var(--text-gray);
-  white-space: nowrap;
-  transition: color 0.2s ease;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
 }
 
 .mining-nav-link:hover {
-  color: var(--accent-gold);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
-/* Mining Sub-Sections */
-.mining-sub-section {
-  padding: 80px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+/* Sections Common Layout */
+.mining-section {
+  padding: 50px 0;
 }
 
-.sub-section-title {
-  font-family: var(--font-oswald);
-  font-size: 36px;
-  font-weight: 200;
-  letter-spacing: 2px;
-  text-align: center;
-  color: var(--text-white);
-  text-transform: uppercase;
-  margin-bottom: 48px;
+.mining-banner-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
 }
 
-/* Grid Layouts */
-.maps-grid,
-.equipment-grid,
-.team-grid,
-.investment-grid {
+.mining-section-plank {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================================
+   3. Maps Section (.zone-grid, .zone-card, .zone-map)
+   ========================================================= */
+.zone-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 25px;
 }
 
-.equipment-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* Map & Equipment Cards */
-.mining-card {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
+.zone-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mining-card-img-wrapper {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  background-color: #111111;
+.zone-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.12);
 }
 
-.mining-card-img {
+.zone-map {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
+  display: block;
+  cursor: pointer;
+  background-color: #111;
+  transition: transform 0.3s ease;
 }
 
-.mining-card-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.zone-map:hover {
+  transform: scale(1.03);
 }
 
-.mining-card-tag {
-  font-family: var(--font-oswald);
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.zone-content {
+  padding: 20px;
+}
+
+.zone-content h3 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 
-.mining-card-title {
-  font-family: var(--font-oswald);
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--text-white);
-  margin-bottom: 10px;
-}
-
-.mining-card-desc {
-  font-family: var(--font-roboto);
+.zone-content p {
+  font-family: var(--font-roboto), sans-serif;
   font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-offwhite);
+  color: #ccc;
+  line-height: 1.5;
 }
 
-/* Methodology Steps */
-.methodology-grid {
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* =========================================================
+   4. Equipment Section (.equipment-grid, .equipment-card)
+   ========================================================= */
+.equipment-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
 }
 
-.methodology-card {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  padding: 30px 24px;
-  position: relative;
-}
-
-.step-number {
-  font-family: var(--font-oswald);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.step-title {
-  font-family: var(--font-oswald);
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--text-white);
-  margin-bottom: 12px;
-}
-
-.step-desc {
-  font-family: var(--font-roboto);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-offwhite);
-}
-
-/* Investment Cards */
-.investment-card {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 4px;
-  padding: 36px 28px;
+.equipment-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-.inv-level {
-  font-family: var(--font-oswald);
-  font-size: 13px;
+.equipment-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.equipment-img-wrapper {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: #0d0d0d;
+}
+
+.equipment-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+  transition: transform 0.4s ease;
+}
+
+.equipment-card:hover .equipment-img {
+  transform: scale(1.05);
+}
+
+.equipment-content {
+  padding: 24px;
+}
+
+.equipment-title {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffd700;
+  margin-bottom: 4px;
+}
+
+.equipment-subtitle {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 15px;
   font-weight: 400;
-  color: var(--accent-gold);
+  color: #ffffff;
+  margin-bottom: 12px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
-.inv-title {
-  font-family: var(--font-oswald);
-  font-size: 24px;
-  font-weight: 300;
-  color: var(--text-white);
-  margin-bottom: 14px;
+.equipment-desc {
+  font-family: var(--font-roboto), sans-serif;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
 }
 
-.inv-desc {
-  font-family: var(--font-roboto);
+/* =========================================================
+   5. Team Section (.team-grid, .team-card, .team-img)
+   ========================================================= */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.12);
+}
+
+.team-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: grayscale(100%) contrast(1.15) brightness(0.75);
+  transition: filter 0.3s ease;
+}
+
+.team-card:hover .team-img {
+  filter: grayscale(40%) contrast(1.1) brightness(0.9);
+}
+
+.team-content {
+  padding: 20px;
+}
+
+.team-content h3 {
+  font-family: var(--font-oswald), sans-serif;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.team-content p {
+  font-family: var(--font-roboto), sans-serif;
+  color: #ccc;
   font-size: 14px;
   line-height: 1.6;
-  color: var(--text-offwhite);
-  margin-bottom: 24px;
 }
 
-.inv-features {
-  list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 20px;
+/* =========================================================
+   6. Methodology Section (.method-grid, .method-card)
+   ========================================================= */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
 }
 
-.inv-features li {
-  font-family: var(--font-roboto);
+.method-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  padding: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.12);
+}
+
+.method-card:nth-child(4) {
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.method-content {
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  color: #ffd700;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 13px;
-  color: var(--text-gray);
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 215, 0, 0.08);
 }
 
-.inv-features li::before {
-  content: "✓";
-  color: var(--accent-gold);
+.method-content h3 {
+  color: #fff;
+  font-family: var(--font-oswald), sans-serif;
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-@media (max-width: 1024px) {
+.method-content p {
+  color: #ccc;
+  font-family: var(--font-roboto), sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   7. Investment Section (.invest-grid, .invest-card)
+   ========================================================= */
+.invest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.invest-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  padding: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.invest-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.12);
+}
+
+.invest-card.highlighted {
+  border-color: #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.invest-content {
+  position: relative;
+  z-index: 2;
+}
+
+.invest-content h3 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 20px;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.invest-content p {
+  font-family: var(--font-roboto), sans-serif;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 8. Mining Contact Form */
+.mining-contact-form-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Responsive Rules matching moonrabbit.pk */
+@media (max-width: 900px) {
+  .zone-grid,
   .equipment-grid,
-  .methodology-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .maps-grid,
   .team-grid,
-  .investment-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 650px) {
-  .maps-grid,
-  .equipment-grid,
-  .team-grid,
-  .methodology-grid,
-  .investment-grid {
+  .method-grid,
+  .invest-grid {
     grid-template-columns: 1fr;
   }
-  .mining-title {
-    font-size: 34px;
+
+  .mining-section {
+    padding: 35px 0;
+  }
+
+  .mining-nav-container {
+    gap: 12px;
+  }
+
+  .mining-nav-link {
+    font-size: 13px;
   }
 }
