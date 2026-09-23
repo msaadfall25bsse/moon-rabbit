@@ -1,51 +1,32 @@
+"use client";
+
 import ContactForm from "@/components/ContactForm";
 import "@/styles/contact.css";
 
 export default function ContactPage() {
   return (
-    <main>
-      {/* Contact Banner Section */}
-      <section className="contact-hero">
-        <div className="container">
-          <h1 className="contact-title">Contact Us</h1>
-          <p className="contact-subtitle">
-            Planning your mystical journey to Northern Pakistan? Reach out to the Moon Rabbit team.
-          </p>
-        </div>
-      </section>
+    <main className="contact-page">
+      {/* Spacer matching original elementor layout */}
+      <div className="contact-spacer" />
 
-      {/* Contact Main Grid Section */}
-      <section className="contact-section">
-        <div className="container">
-          <div className="contact-grid">
-            {/* Left Sidebar Info */}
-            <div className="contact-info-card">
-              <h2 className="info-heading">Get In Touch</h2>
+      {/* Main Form Container */}
+      <section className="contact-container">
+        <div className="contact-inner">
+          {/* Centered Wooden Plank Banner */}
+          <div className="contact-banner-wrapper">
+            <img
+              src="/images/banners/aged_wooden_plank_contact.png"
+              alt="Contact Moon Rabbit"
+              className="contact-plank-banner"
+              onError={(e) => {
+                // Keep layout clean if image not yet uploaded
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
 
-              <div className="info-item">
-                <p className="info-label">Address</p>
-                <p className="info-value">
-                  Gilgit & Skardu, Northern Pakistan
-                </p>
-              </div>
-
-              <div className="info-item">
-                <p className="info-label">Phone & WhatsApp</p>
-                <p className="info-value">+92 300 0000000</p>
-              </div>
-
-              <div className="info-item">
-                <p className="info-label">Email Address</p>
-                <p className="info-value">info@moonrabbit.pk</p>
-              </div>
-
-              <div className="info-item">
-                <p className="info-label">Tour Hours</p>
-                <p className="info-value">Monday – Sunday: 24 / 7 Concierge</p>
-              </div>
-            </div>
-
-            {/* Right Contact Form */}
+          {/* Contact Form Element */}
+          <div className="contact-form-card">
             <ContactForm />
           </div>
         </div>

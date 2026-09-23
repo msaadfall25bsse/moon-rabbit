@@ -1,166 +1,211 @@
-/* Contact Page Styles matching moonrabbit.pk */
+/* =========================================================
+   Contact Page Styles (https://moonrabbit.pk/contact/)
+   Faithfully reproduced using exact CSS rules from moonrabbit.pk
+   ========================================================= */
 
-.contact-hero {
-  background-color: var(--bg-black);
-  padding: 60px 0 40px 0;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.contact-page {
+  background-color: #000000;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
 }
 
-.contact-title {
-  font-family: var(--font-oswald);
-  font-size: 45px;
-  font-weight: 200;
-  letter-spacing: 3px;
-  color: var(--text-white);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.contact-subtitle {
-  font-family: var(--font-roboto);
-  font-size: 16px;
-  color: var(--text-gray);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.contact-section {
-  padding: 80px 0;
-  background-color: var(--bg-black);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 50px;
-  align-items: start;
-}
-
-/* Contact Information Sidebar */
-.contact-info-card {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  padding: 36px 30px;
-}
-
-.info-heading {
-  font-family: var(--font-oswald);
-  font-size: 26px;
-  font-weight: 300;
-  color: var(--text-white);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-}
-
-.info-item {
-  margin-bottom: 24px;
-}
-
-.info-label {
-  font-family: var(--font-oswald);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 4px;
-}
-
-.info-value {
-  font-family: var(--font-roboto);
-  font-size: 15px;
-  color: var(--text-offwhite);
-  line-height: 1.6;
-}
-
-/* Contact Form Component */
-.contact-form-wrapper {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  padding: 36px 30px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  font-family: var(--font-oswald);
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--text-offwhite);
-  margin-bottom: 8px;
-}
-
-.form-input,
-.form-textarea {
+.contact-spacer {
+  height: 40px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
-  padding: 12px 16px;
-  color: #ffffff;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Aged Wooden Plank Banner */
+.contact-banner-wrapper {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-plank-banner {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Contact Form Container & Fields matching original wpforms */
+.contact-form-card {
+  width: 100%;
+}
+
+.wpforms-container-full {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100%;
+}
+
+.wpforms-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.wpforms-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wpforms-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wpforms-form label,
+.wpforms-field-label {
+  color: #ffffff !important;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 15px;
-  font-family: var(--font-roboto);
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  font-weight: 500;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.5px;
 }
 
-.form-input:focus,
-.form-textarea:focus {
-  outline: none;
-  border-color: var(--accent-gold);
-  background-color: rgba(255, 255, 255, 0.07);
+.wpforms-required-label {
+  color: #ff4d4d;
+  margin-left: 3px;
 }
 
-.form-textarea {
-  min-height: 140px;
+/* Form inputs matching exact backdrop-filter and border radius from moonrabbit.pk */
+.wpforms-form input,
+.wpforms-form textarea {
+  background: rgba(0, 0, 0, 0.40) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  border-radius: 14px !important;
+  padding: 16px 20px !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: var(--font-roboto), sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wpforms-form input::placeholder,
+.wpforms-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+  opacity: 1 !important;
+}
+
+.wpforms-form input:hover,
+.wpforms-form textarea:hover {
+  background: rgba(0, 0, 0, 0.48) !important;
+  border-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+.wpforms-form input:focus,
+.wpforms-form textarea:focus {
+  outline: none !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10);
+}
+
+.wpforms-form textarea {
+  min-height: 160px;
   resize: vertical;
 }
 
-.submit-btn {
-  background-color: transparent;
-  color: var(--accent-gold);
-  font-family: var(--font-oswald);
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border: 1px solid var(--accent-gold);
-  border-radius: 2px;
-  padding: 12px 32px;
-  cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease;
-  width: 100%;
+/* Submit Button matching exact original style */
+.wpforms-submit-container {
   margin-top: 10px;
+  width: 100%;
 }
 
-.submit-btn:hover {
-  background-color: var(--accent-gold);
-  color: #000000;
+.wpforms-submit {
+  width: 100%;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 16px 24px !important;
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 16px;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.success-msg {
-  font-family: var(--font-roboto);
-  font-size: 14px;
-  color: var(--accent-gold);
-  background-color: rgba(212, 175, 55, 0.1);
-  border: 1px solid var(--accent-gold);
-  padding: 12px;
-  border-radius: 2px;
+.wpforms-submit:hover {
+  background: #e6e6e6 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Confirmation Success Box */
+.wpforms-confirmation-container-full {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 25px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+.wpforms-confirmation-container-full p {
+  color: #000000 !important;
+  font-family: var(--font-roboto), sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .contact-inner {
+    max-width: 100%;
+  }
+
+  .contact-banner-wrapper {
+    max-width: 320px;
+    margin-bottom: 20px;
+  }
+
+  .contact-spacer {
+    height: 20px;
+  }
+
+  .wpforms-form input,
+  .wpforms-form textarea {
+    padding: 14px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .wpforms-submit {
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
   }
 }

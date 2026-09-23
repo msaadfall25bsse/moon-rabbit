@@ -6,91 +6,107 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Pure frontend handling - no backend API call as requested
+    // Strictly frontend only, no backend/email sending
     setSubmitted(true);
-    setFormData({ fullName: "", email: "", phone: "", message: "" });
+    setFormData({ fullName: "", email: "", phoneNumber: "", message: "" });
     setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
-    <div className="contact-form-wrapper">
-      <h2 className="info-heading">Send Us A Message</h2>
-
+    <div className="wpforms-container wpforms-container-full wpforms-render-modern" id="wpforms-4434">
       {submitted && (
-        <div className="success-msg">
-          Thank you! Your inquiry message has been received. We will respond shortly.
+        <div className="wpforms-confirmation-container-full">
+          <p>Thanks for contacting us! We will be in touch with you shortly.</p>
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="fullName" className="form-label">
-            Full Name *
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            className="form-input"
-            placeholder="Enter your full name"
-            required
-            value={formData.fullName}
-            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-          />
+      <form
+        id="wpforms-form-4434"
+        className="wpforms-form"
+        onSubmit={handleSubmit}
+      >
+        <div className="wpforms-field-container">
+          {/* Full Name */}
+          <div className="wpforms-field wpforms-field-name">
+            <label className="wpforms-field-label" htmlFor="wpforms-4434-field_0">
+              Full Name <span className="wpforms-required-label" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="wpforms-4434-field_0"
+              className="wpforms-field-large wpforms-field-required"
+              placeholder="Your Name"
+              required
+              value={formData.fullName}
+              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            />
+          </div>
+
+          {/* Email Address */}
+          <div className="wpforms-field wpforms-field-email">
+            <label className="wpforms-field-label" htmlFor="wpforms-4434-field_1">
+              Email Address <span className="wpforms-required-label" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="wpforms-4434-field_1"
+              className="wpforms-field-large wpforms-field-required"
+              placeholder="sample@yourcompanydomain.com"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+          </div>
+
+          {/* Phone Number */}
+          <div className="wpforms-field wpforms-field-text">
+            <label className="wpforms-field-label" htmlFor="wpforms-4434-field_3">
+              Phone Number <span className="wpforms-required-label" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="tel"
+              id="wpforms-4434-field_3"
+              className="wpforms-field-large wpforms-field-required"
+              placeholder="Phone Number"
+              required
+              value={formData.phoneNumber}
+              onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+            />
+          </div>
+
+          {/* Message */}
+          <div className="wpforms-field wpforms-field-textarea">
+            <label className="wpforms-field-label" htmlFor="wpforms-4434-field_2">
+              Message
+            </label>
+            <textarea
+              id="wpforms-4434-field_2"
+              className="wpforms-field-large"
+              placeholder="Message"
+              rows={6}
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            />
+          </div>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="email" className="form-label">
-            Email Address *
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="form-input"
-            placeholder="Enter your email address"
-            required
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
+        <div className="wpforms-submit-container">
+          <button
+            type="submit"
+            id="wpforms-submit-4434"
+            className="wpforms-submit"
+            value="wpforms-submit"
+          >
+            Submit
+          </button>
         </div>
-
-        <div className="form-group">
-          <label htmlFor="phone" className="form-label">
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            className="form-input"
-            placeholder="Enter your phone or WhatsApp number"
-            value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="message" className="form-label">
-            Message *
-          </label>
-          <textarea
-            id="message"
-            className="form-textarea"
-            placeholder="Write your message or tour dates..."
-            required
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          />
-        </div>
-
-        <button type="submit" className="submit-btn">
-          Send Message
-        </button>
       </form>
     </div>
   );
