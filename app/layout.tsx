@@ -23,10 +23,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col justify-between">
-        <Header />
-        <div className="flex-grow">{children}</div>
-        <Footer />
+      <body>
+        <div className="site-wrapper">
+          <Header />
+          <div className="site-main-content">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
