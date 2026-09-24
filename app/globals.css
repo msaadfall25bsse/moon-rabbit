@@ -9,28 +9,35 @@
   --accent-gold: #d4af37;
   --accent-gold-bright: #ffc107;
   --overlay-dark: rgba(0, 0, 0, 0.88);
-  --font-oswald: var(--font-oswald), "Oswald", sans-serif;
-  --font-roboto: var(--font-roboto), "Roboto", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
   --max-width: 1140px;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background-color: var(--bg-black);
   color: var(--text-white);
   font-family: var(--font-roboto);
-  font-size: 16px;
   line-height: 1.6;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -59,7 +66,8 @@ img {
 
 button,
 input,
-textarea {
+textarea,
+select {
   font-family: inherit;
 }
 
@@ -69,15 +77,53 @@ textarea {
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Common Page Section Spacing */
 .section-padding {
-  padding: 80px 0;
+  padding: 70px 0;
+}
+
+/* Prevent horizontal scroll on mobile */
+.wrapper-no-overflow {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   Global Responsive Breakpoints (320px, 480px, 768px, 1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-padding {
+    padding: 50px 0;
+  }
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
   .section-padding {
-    padding: 50px 0;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+
+  .section-padding {
+    padding: 30px 0;
   }
 }

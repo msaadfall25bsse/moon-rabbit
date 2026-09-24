@@ -1,3 +1,5 @@
+"use client";
+
 import { Mountain } from "@/data/mountains";
 
 interface MountainCardProps {

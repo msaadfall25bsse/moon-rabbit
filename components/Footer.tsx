@@ -1,44 +1,48 @@
+"use client";
+
 import Link from "next/link";
 import "@/styles/footer.css";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" role="contentinfo">
       <div className="container footer-container">
-        <div className="footer-brand">
-          <h3 className="footer-title">MOON RABBIT</h3>
-          <p className="footer-subtitle">
-            Mystical Guided Tours & Mineral Exploration in Northern Pakistan
-          </p>
+        {/* Left Side: Moon Rabbit Logo & Spiritual Slogan Banner */}
+        <div className="footer-left-col">
+          <div className="footer-logo-wrap">
+            <img
+              src="/images/logo/MOON-RABBIT-Recovered-01-1-scaled-1-e1781016289237.webp"
+              alt="Moon Rabbit Logo"
+              className="footer-logo-img"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
+          <div className="footer-slogan-wrap">
+            <img
+              src="/images/banners/a-spiritual-journey-through-the-material-World-1.png"
+              alt="A spiritual journey through the material World"
+              className="footer-slogan-img"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
         </div>
 
-        <nav className="footer-nav" aria-label="Footer Navigation">
-          <Link href="/" className="footer-nav-link">
-            Home
+        {/* Right Side: Amanita Muscaria linking to /rabbit-screen */}
+        <div className="footer-right-col">
+          <Link href="/rabbit-screen" className="footer-mushroom-link">
+            <img
+              src="/images/logo/amanita-muscaria-pic.png"
+              alt="Amanita Muscaria"
+              className="footer-mushroom-img"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
           </Link>
-          <Link href="/tour" className="footer-nav-link">
-            Tours
-          </Link>
-          <Link href="/vehicles" className="footer-nav-link">
-            Vehicles
-          </Link>
-          <Link href="/accommodation" className="footer-nav-link">
-            Accommodations
-          </Link>
-          <Link href="/contact" className="footer-nav-link">
-            Contact
-          </Link>
-          <Link href="/mining" className="footer-nav-link">
-            Mining
-          </Link>
-        </nav>
-
-        <div className="footer-bottom">
-          <p className="copyright-text">
-            © {currentYear} Moon Rabbit. All Rights Reserved.
-          </p>
         </div>
       </div>
     </footer>

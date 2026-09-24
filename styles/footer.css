@@ -1,96 +1,119 @@
-/* Global Footer Styles matching moonrabbit.pk */
+/* =========================================================
+   Global Footer Styles (https://moonrabbit.pk/)
+   Faithfully reproduced using exact visual elements from moonrabbit.pk
+   ========================================================= */
+
 .site-footer {
-  background-color: var(--bg-black);
+  background-color: #000000;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 40px 0 30px 0;
+  padding: 50px 0 40px 0;
   margin-top: auto;
-  color: var(--text-gray);
   width: 100%;
 }
 
 .footer-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
+  gap: 30px;
 }
 
-.footer-brand {
+/* Left Column: Logo + Slogan Banner */
+.footer-left-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer-title {
-  font-family: var(--font-oswald);
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 3px;
-  color: var(--text-white);
-  text-transform: uppercase;
-}
-
-.footer-subtitle {
-  font-family: var(--font-roboto);
-  font-size: 13px;
-  color: var(--text-gray);
-  letter-spacing: 1px;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.footer-nav-link {
-  font-family: var(--font-oswald);
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-offwhite);
-  transition: color 0.2s ease;
-}
-
-.footer-nav-link:hover {
-  color: #ffffff;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 480px;
   width: 100%;
-  padding-top: 20px;
-  margin-top: 10px;
+}
+
+.footer-logo-wrap {
+  width: 100%;
+  max-width: 260px;
+}
+
+.footer-logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-slogan-wrap {
+  width: 100%;
+  max-width: 440px;
+}
+
+.footer-slogan-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Right Column: Amanita Mushroom Graphic */
+.footer-right-col {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  max-width: 220px;
+  width: 100%;
 }
 
-.copyright-text {
-  font-family: var(--font-roboto);
-  font-size: 12px;
-  color: #7a7a7a;
-  letter-spacing: 0.5px;
+.footer-mushroom-link {
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.social-links {
-  display: flex;
-  gap: 16px;
+.footer-mushroom-link:hover {
+  transform: scale(1.06);
 }
 
-.social-icon {
-  color: var(--text-gray);
-  font-size: 14px;
-  transition: color 0.2s ease;
+.footer-mushroom-img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
 }
 
-.social-icon:hover {
-  color: #ffffff;
+/* =========================================================
+   Responsive Breakpoints for Footer (Mobile & Tablet)
+   ========================================================= */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .footer-left-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-right-col {
+    justify-content: center;
+  }
+
+  .footer-mushroom-img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 35px 0 25px 0;
+  }
+
+  .footer-logo-wrap {
+    max-width: 200px;
+  }
+
+  .footer-slogan-wrap {
+    max-width: 300px;
+  }
+
+  .footer-mushroom-img {
+    width: 100px;
+  }
 }

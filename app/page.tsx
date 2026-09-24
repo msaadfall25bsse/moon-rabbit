@@ -1,5 +1,3 @@
-"use client";
-
 import MountainCard from "@/components/MountainCard";
 import { MOUNTAINS_DATA } from "@/data/mountains";
 import "@/styles/home.css";
@@ -13,10 +11,6 @@ export default function HomePage() {
           src="/images/home-hero.jpg"
           alt="Northern Pakistan Scenery"
           className="hero-background"
-          onError={(e) => {
-            // Hide image element if file not yet present in public/
-            e.currentTarget.style.display = "none";
-          }}
         />
         <div className="hero-overlay" />
         <div className="hero-content">

@@ -1,148 +1,106 @@
-/* Tours Page Styles matching moonrabbit.pk */
+/* =========================================================
+   Tours Page Styles (https://moonrabbit.pk/tour/)
+   Faithfully reproduced using exact CSS rules from moonrabbit.pk
+   ========================================================= */
 
-.tours-hero {
-  background-color: var(--bg-black);
-  padding: 60px 0 40px 0;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.tours-page {
+  background-color: #000000;
+  min-height: 85vh;
+  padding-bottom: 70px;
 }
 
-.tours-title {
-  font-family: var(--font-oswald);
-  font-size: 45px;
-  font-weight: 200;
-  letter-spacing: 3px;
-  color: var(--text-white);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.tours-subtitle {
-  font-family: var(--font-roboto);
-  font-size: 16px;
-  color: var(--text-gray);
-  max-width: 700px;
-  margin: 0 auto;
+.tours-spacer {
+  height: 40px;
 }
 
 .tours-section {
-  padding: 80px 0;
-  background-color: var(--bg-black);
+  padding: 20px 0 60px 0;
 }
 
+/* 4-column responsive grid matching original website */
 .tours-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
-/* Tour Card Component */
-.tour-card {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  overflow: hidden;
+.tour-item {
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  width: 100%;
 }
 
-.tour-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(212, 175, 55, 0.4);
+.tour-caption-figure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.tour-card-image-wrapper {
+.tour-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.tour-img-wrapper {
   position: relative;
   width: 100%;
-  height: 220px;
+  aspect-ratio: 1 / 1;
   background-color: #111111;
   overflow: hidden;
+  border-radius: 8px;
 }
 
+/* Hover grow animation matching elementor-animation-grow */
 .tour-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.tour-card:hover .tour-card-img {
-  transform: scale(1.05);
+.tour-card-img.elementor-animation-grow:hover,
+.tour-link:hover .tour-card-img {
+  transform: scale(1.06);
 }
 
-.tour-card-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.tour-card-duration {
-  font-family: var(--font-oswald);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.tour-card-title {
-  font-family: var(--font-oswald);
-  font-size: 22px;
+/* Figcaption text */
+.tour-caption-text {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 17px;
   font-weight: 300;
-  color: var(--text-white);
-  margin-bottom: 8px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 14px;
   letter-spacing: 0.5px;
 }
 
-.tour-card-location {
-  font-family: var(--font-roboto);
-  font-size: 13px;
-  color: var(--text-gray);
-  margin-bottom: 16px;
-}
-
-.tour-card-desc {
-  font-family: var(--font-roboto);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-offwhite);
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.tour-card-inclusions {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 16px;
-}
-
-.inclusion-tag {
-  display: inline-block;
-  font-family: var(--font-oswald);
-  font-size: 12px;
-  font-weight: 300;
-  color: var(--text-gray);
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 4px 10px;
-  border-radius: 2px;
-  margin-right: 6px;
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
-}
-
+/* =========================================================
+   Responsive Breakpoints for Tours Page
+   ========================================================= */
 @media (max-width: 1024px) {
   .tours-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tours-spacer {
+    height: 25px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .tours-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
-  .tours-title {
-    font-size: 32px;
+
+  .tour-caption-text {
+    font-size: 16px;
   }
 }
